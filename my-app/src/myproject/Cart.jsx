@@ -29,12 +29,28 @@ function Cart() {
   const handlePayNow = (itemId) => {
     const courseName = cart.find(item => item.id === itemId).name;
     const amount = calculateProductTotal(cart.find(item => item.id === itemId));
-    
+
     if (window.confirm(`Are you sure you want to pay ₹${amount} for ${courseName}?`)) {
       const message = `Payment for ${courseName} has been successfully paid!`;
       setSuccessMessages(prevMessages => ({ ...prevMessages, [itemId]: message }));
     }
   };
+
+  if (cart.length === 0) {
+    return (
+      <div className='container text-center align-items-center'>
+        <div className='cart mt-5 pt-5 ps-5 mb-5 text-center'>
+          <h1>Cart</h1>
+          <p>No items in the cart. Add some courses to your cart!</p>
+          <button className='goback-btn'>
+            <Link to='/' className='link btn'>
+              Go Back
+            </Link>
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className='container text-center align-items-center'>
@@ -59,11 +75,6 @@ function Cart() {
                       <button onClick={() => handlePayNow(item.id)} className='ps-4 pt-2 pb-2 pe-4 mb-2'>Pay Now</button> <br />
                     </>
                   )}
-                  <button>
-                    <Link to='/' className='goback-btn link btn'>
-                      Go Back
-                    </Link>
-                  </button> <br />
 
                   {/* Display success message below each card */}
                   {successMessages[item.id] && (
@@ -74,6 +85,11 @@ function Cart() {
             </li>
           ))}
         </ul>
+        <button className='goback-btn'>
+          <Link to='/' className='link btn'>
+            Go Back
+          </Link>
+        </button>
       </div>
     </div>
   );
