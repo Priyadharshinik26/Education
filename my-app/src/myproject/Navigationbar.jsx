@@ -30,8 +30,8 @@ function Navigationbar(){
 
 
 return(
-  <div>
-<Navbar expand="lg" className="menu bg-tertiary fixed-top shadow">
+  <div className='position-relative'> 
+<Navbar expand="lg" className="menu bg-tertiary sticky-top shadow">
  <Link to='#epwkde' className='navbar-brand'><FaBook className='book-logo'/> eLEARNING</Link>
   <Navbar.Toggle aria-controls="basic-navbar-nav" className="ms-auto" />
   <Navbar.Collapse id="basic-navbar-nav">

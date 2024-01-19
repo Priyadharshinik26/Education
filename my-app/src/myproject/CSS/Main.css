@@ -6,13 +6,13 @@
 
 .menu{
     padding: 0px;
-    position: fixed;
 }
 .navbar{
     display: flex;
     background-color: white;
     padding: 0px;
     height: 75px;
+    position: sticky;
 }
 .navbar-nav{
     margin-left: 46%;
@@ -242,6 +242,7 @@
             width: auto;
             height: auto;
         }
+     
     }
                  /* carousel */
  .carousel{

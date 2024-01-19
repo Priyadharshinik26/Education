@@ -17,6 +17,7 @@ import Testimoniall from './myproject/Testimoniall';
 import Notfound from './myproject/Notfound';
 import Contact from './myproject/Contact';
 import Navigationbar from './myproject/Navigationbar';
+import Footer from './myproject/Footer';
 import Cart from './myproject/Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Readmore from './myproject/Readmore';
@@ -58,6 +59,7 @@ function App() {
       <Route path="cart" element={<Cart />} />
       <Route path="readmore" element={<Readmore />} />
      </Routes> 
+     <Footer />
     </div>
     </BrowserRouter>
   );
